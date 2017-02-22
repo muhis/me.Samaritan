@@ -1,6 +1,6 @@
 from django.test import TestCase
 from main.models import users, code
-
+from main.agn import GenerateAgn, FixLength
 # Create your tests here.
 class UserTestCase(TestCase):
     def setUp(self):
@@ -16,3 +16,21 @@ class UserTestCase(TestCase):
         self.assertEqual(code1.phone(), False)
         self.assertEqual(code2.phone(), int('0123456789'))
         self.assertEqual(code2.address(), 'address')
+class AGNTestCase(TestCase):
+    def setUp(self):
+        pass
+
+
+    def test_brute_force_test(self):
+        for i in range(1000000):
+            code = GenerateAgn()
+            self.assertEqual(len(code), 4)
+    def test_length_fixing(self):
+        first = FixLength (1)
+        second = FixLength (11)
+        third = FixLength (111)
+        fourth = FixLength(1111)
+        self.assertEqual(first, '0001')
+        self.assertEqual(second, '0011')
+        self.assertEqual(third, '0111')
+        self.assertEqual(fourth, '1111')

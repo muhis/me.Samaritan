@@ -1,5 +1,5 @@
 from django.db import models
-
+from main.agn import GenerateAgn
 # Create your models here.
 class users(models.Model):
     name = models.TextField()
@@ -10,7 +10,7 @@ class users(models.Model):
         return "%s: Number(%s), Email(%s), address(%s)" % (self.name, self.phone, self.email, self.address)
 class code(models.Model):
     user = models.ForeignKey(users , on_delete = models.CASCADE)
-    code = models.CharField(max_length = 250)
+    code = models.CharField(max_length = 250, default = GenerateAgn)
     show_name = models.BooleanField()
     show_email = models.BooleanField()
     show_phone = models.BooleanField()

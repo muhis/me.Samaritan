@@ -18,5 +18,7 @@ from django.contrib import admin
 from main import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^(?P<var>[A-Za-z0-9]+)$', views.lookup, name="test")
+    url(r'^new$', views.new, name="new"),
+    url(r'^save$', views.create, name="create"),
+    url(r'^(?P<var>[A-Za-z0-9]+)$', views.codeview, name="codeview"),
 ]

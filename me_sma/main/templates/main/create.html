@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create code</title>
+  </head>
+  <body>
+    <form class="" action="{%url 'create'%}" method="post">
+      {% csrf_token %}
+      <p>Choose what information you want to connect to the code.</p>
+      <input id = 'name' type="checkbox" name="check" value="show_name">Show my name</input><br>
+      <input id = 'phone' type="checkbox" name="check" value="show_phone">Show my phone number</input><br>
+      <input id = 'email' type="checkbox" name="check" value="show_email">Show my Email</input><br>
+      <input id = 'address' type="checkbox" name="check" value="show_address">Show my Address</input><br>
+      <input type="submit" name="create" value="create">
+    </form>
+
+  </body>
+</html>

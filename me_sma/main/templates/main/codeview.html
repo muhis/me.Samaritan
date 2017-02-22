@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code information</title>
+  </head>
+  <body>
+    <p>You have found {{code}}, thank you for trying to give it back.</p>
+    <p>You can reach the item owner with the following means:</p>
+    {% if name %}
+      <p>{{name}}</p>
+    {%endif%}
+    {%if phone%}
+      <p> {{phone}}</p>
+    {%endif%}
+    {%if email%}
+      <p> {{email}}</p>
+    {%endif%}
+    {%if address%}
+    <p>{{address}}</p>
+    {%endif%}
+    <p>That is all for today!</p>
+  </body>
+</html>
